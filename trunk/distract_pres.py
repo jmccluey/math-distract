@@ -7,6 +7,7 @@ import os
 import sys
 import shutil
 import math_distract as math
+import prep_math as prep
 
 def prepare(exp, config):
     """
@@ -22,7 +23,7 @@ def prepare(exp, config):
     answers = []
     proposed = []
     for i in range(config.numSets):
-        set_config = math.prep_math_set(config.numVars,
+        set_config = prep.prep_math_set(config.numVars,
             config.minNum, config.maxNum, config.maxProbs, 
             config.plusAndMinus, config.ansMod, config.ansProb,
             config.tfProblems, config.uniqueVars, 
