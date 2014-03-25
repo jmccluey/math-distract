@@ -87,6 +87,7 @@ def run(exp, config):
                                 fixation = fix,
                                 presentSeq = config.presentSeq,
                                 numberDuration = config.numberDuration,
+                                showEquals = config.showEquals,
                                 numberISI = config.numberISI,
                                 probISI = config.probISI,
                                 probJitter = config.probJitter)

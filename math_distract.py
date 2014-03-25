@@ -12,11 +12,13 @@ from pyepl import convenience
 
 import pygame
 from pyepl import timing
+import prep_math
 
 def run_problem(terms, ops, answer, v, clock, mathlog, textSize,
                 endTime, ans_but, trialNum=None, numberDuration=None,
                 numberISI=None, tfProblems=False, tfKeys=None, 
-                proposed=None, scoreDisplay=None, presentSeq=False):
+                proposed=None, scoreDisplay=None, presentSeq=False,
+                showEquals=False):
     """
     Present a  math problem and record a response.
     """
@@ -36,7 +38,7 @@ def run_problem(terms, ops, answer, v, clock, mathlog, textSize,
         ct = v.showProportional(scoreDisplay, .8, .1)
 
     # get problem text for presentation/logging
-    probanswer, probtxt = eval_problem(terms, ops)
+    probanswer, probtxt = prep_math.eval_problem(terms, ops)
     
     if presentSeq:
         # present each term, without the operator(s). Assuming that
@@ -47,8 +49,12 @@ def run_problem(terms, ops, answer, v, clock, mathlog, textSize,
         for x in terms:
             s.append(str(x))
             text.append(display.Text(str(x), size=textSize))
-        s.append('=')
-        text.append(display.Text('=', size=textSize))
+        
+        if showEquals:
+            s.append('=')
+            text.append(display.Text('=', size=textSize))
+        else:
+            rstr += '?'
 
         tt = None
         prestime = []
@@ -159,6 +165,7 @@ def run_math_set(terms, ops, answers, proposed=None,
                  trialNum = None,
                  fixation = None,
                  presentSeq = False,
+                 showEquals = False,
                  numberDuration = 800,
                  numberISI = 0,
                  probISI = 500,
@@ -292,7 +299,8 @@ def run_math_set(terms, ops, answers, proposed=None,
             numberDuration=numberDuration,
             numberISI=numberISI,
             tfProblems=tfProblems, tfKeys=tfKeys,
-            proposed=curProposed, presentSeq=presentSeq)
+            proposed=curProposed, presentSeq=presentSeq,
+            showEquals=showEquals)
         probTimes.append(probstart)
 
         # the problem has to have been presented at least

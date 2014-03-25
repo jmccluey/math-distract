@@ -1,7 +1,7 @@
 
 # math problem options
 numSets = 10
-numVars = 2
+numVars = 3
 minNum = 1
 maxNum = 9
 maxProbs = 10
@@ -32,9 +32,10 @@ textSize = .1
 # distribution of times will depend on the specific timing parameters
 displayCorrect = False
 presentSeq = True
-maxDistractorLimit = 8500
+showEquals = False
+maxDistractorLimit = 7500
 minProblemTime = 400
-numberDuration = 400
+numberDuration = 500
 numberISI = 0
 probISI = 300
 probJitter = 200
