@@ -13,7 +13,7 @@ uniqueVars = True
 excludeRepeats = True
 
 # text
-defaultFont = '../fonts/Verdana.ttf'
+defaultFont = 'fonts/Verdana.ttf'
 fixHeight = .08
 textSize = .1
 
