@@ -18,7 +18,7 @@ This is a project for PyEPL code that runs a math distraction task. Participants
 
   Config file for running distract_pres.py. Change this to alter the problems, timing, etc.
 
-###Installation
+##Installation
 
 [PyEPL](https://pyepl.sourceforge.net) is required, and the project must be on your path.
 
